@@ -92,6 +92,10 @@ app.get("/api/waitList", function (req, res) {
     res.json(waitList);
 });
 
+app.get("/api/tables", function (req, res) {
+    res.json(seatedTables);
+});
+
 app.get("/api/:seatedTables?", function (req,res) {
     var selected = req.params.seatedTables;
 
@@ -110,10 +114,36 @@ app.get("/api/:seatedTables?", function (req,res) {
 
 
 
+//  Reserve Button
+$(".reserve").on("click", function (e) {
+    e.preventDefault();
+    var name = $("#name").val().trim();
+    var phone = $("#phoneNumber").val().trim();
+    var email = $("#emailInput").val().trim();
+    var uniqueId = uniqueIdMaker();
+
+    var newReservation = {
+        name,
+        phone,
+        email,
+        uniqueId
+    };
+
+    $.post("api/newreserve", newReservation).done(function (da) {
+        console.log(da);
+        location.href = "/";
+    })
+
+});
 
 
 
 
+app.post("/api/newreserve", function (req, res) {
+    var newReservation = req.body;
+    newReservation.routeName = newReservation.name.replace(/\s+/g, "").toLowerCase();
+    waitList.push(newReservation);
+});
 
 app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
