@@ -3,7 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
 var id;
-var allId[];
+var allId = [];
 
 var app = express();
 var PORT = 3000;
@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 function uniqueIdMaker() {
     id = Math.floor(Math.random() * 100);
-    for (var i = 0; i < allId.length) {
+    for (var i = 0; i < allId.length; i++) {
         if (id = allId[i]) {
             uniqueIdMaker();
         } else {
@@ -102,7 +102,7 @@ app.get("/api/:seatedTables?", function (req,res) {
     if (selected) {
         console.log(selected);
 
-        for (var i = 0; i < seatedTables.length, i++) {
+        for (var i = 0; i < seatedTables.length; i++) {
             if (selected === seatedTables[i].routeName) {
                 return res.json(seatedTables[i]);
             }
