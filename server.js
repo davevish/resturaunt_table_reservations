@@ -72,6 +72,8 @@ var seatedTables = [
 
 var waitList = [];
 
+app.use(express.static('public'));
+
 app.get("/", function (request, res) {
     res.sendFile(path.join(__dirname, "index.html"));
 });
@@ -115,26 +117,7 @@ app.get("/api/:seatedTables?", function (req,res) {
 
 
 //  Reserve Button
-$(".reserve").on("click", function (e) {
-    e.preventDefault();
-    var name = $("#name").val().trim();
-    var phone = $("#phoneNumber").val().trim();
-    var email = $("#emailInput").val().trim();
-    var uniqueId = uniqueIdMaker();
 
-    var newReservation = {
-        name,
-        phone,
-        email,
-        uniqueId
-    };
-
-    $.post("api/newreserve", newReservation).done(function (da) {
-        console.log(da);
-        location.href = "/";
-    })
-
-});
 
 
 
