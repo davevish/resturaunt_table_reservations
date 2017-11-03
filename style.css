@@ -1,6 +1,7 @@
 body{
     text-align: center;
     padding-bottom: 50px;
+    background: url("1.png");
 }
 
 .jumbotron{
@@ -14,5 +15,7 @@ body{
     text-align: center;
 }
 .navbar-fixed-bottom a{
-    padding-right: 10px;
+    padding-right: 50px;
+    text-decoration: none;
+    color: gold;
 }
