@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -25,8 +30,8 @@
             <h1>Fuego Vegan Stakehouse!</h1>
             <br>
             <p>Here are all the current reservations!</p>
-            <p><a class="btn btn-primary btn-lg" href="/" role="button">Home</a></p>
-            <p><a class="btn btn-primary btn-lg" href="/tables" role="button">View Tables</a></p>
+            <p><a id="home" class="btn btn-primary btn-lg" href="/" role="button">Home</a></p>
+            <p><a id="tables" class="btn btn-primary btn-lg" href="/tables" role="button">View Tables</a></p>
         </div>
     </div>
 </div>
@@ -59,6 +64,11 @@
         </div>
     </div>
 </div>
+
+<br>
+<br>
+<br>
+<br>
 
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <a href="#">Table API</a>
